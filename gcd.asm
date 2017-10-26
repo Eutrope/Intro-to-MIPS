@@ -68,7 +68,7 @@ gcd:	     				# the “gcd” procedure
 
 	beq $a1, $a2, exit		# if base case return gcd(m==n)
 	bgt $a1, $a2, ifGreater		# else if 1st > 2nd number return gcd(m-n, n)
-	blt $a1, $a2, ifLess		# else if 1st > 2nd number return gcd(m-n, n)
+	blt $a1, $a2, ifLess		# else if 1st < 2nd number return gcd(m-n, n)
 
 ifGreater:
 	subu $a1, $a1, $a2		# m - n
@@ -78,7 +78,7 @@ ifGreater:
 	lw $a1, 4($sp)
 	lw $a2, 8($sp)
 	addi $sp, $sp, 12		# pop 3 items off the stack
-	jr $ra				# jump back to caller (gcd)
+	jr $ra				
 	
 ifLess:
 	sub $a2, $a2, $a1		# n - m
@@ -88,10 +88,10 @@ ifLess:
 	lw $a1, 4($sp)
 	lw $a2, 8($sp)
 	addi $sp, $sp, 12		# pop 3 items off the stack
-	jr $ra				# jump back to caller (gcd)
+	jr $ra				
 	
 exit:
 	addi $v0, $a1, 0		# storing the result into v1, picking a1 because at base case a1 and a2 will be the same
-	jr $ra				# jumping back to caller (main) and continue where we left off
+	jr $ra				
 							
 # End of program
