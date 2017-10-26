@@ -69,9 +69,6 @@ gcd:	     				# the “gcd” procedure
 	beq $a1, $a2, exit		# if base case return gcd(m==n)
 	bgt $a1, $a2, ifGreater		# else if 1st > 2nd number return gcd(m-n, n)
 	blt $a1, $a2, ifLess		# else if 1st > 2nd number return gcd(m-n, n)
-	
-	jr $ra				# jump back to caller.. not sure if ever gonna reach this
-					# but putting this here just in case...
 
 ifGreater:
 	subu $a1, $a1, $a2		# m - n
