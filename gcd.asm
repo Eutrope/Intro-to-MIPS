@@ -9,7 +9,7 @@ is: .asciiz " is: "
 														
 	.text				# instructions follow this line	
 	
-main:     				# indicates start of code to test lcm the procedure
+main:     				# indicates start of code to test gcd the procedure
 	la $a0, str1			# prompt for first number
 	jal consolePrint
 	
