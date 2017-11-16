@@ -9,7 +9,7 @@ is: .asciiz " is: "
 														
 	.text				# instructions follow this line	
 	
-main:     				# indicates start of code to test lcm the procedure
+main:     				# indicates start of code to test gcd the procedure
 	li $v0, 4			# Getting the first number
 	la $a0, str1
 	syscall
@@ -89,5 +89,3 @@ ifLess:
 exit:
 	addi $v0, $a1, 0		# storing the result into v1, picking a1 because at base case a1 and a2 will be the same
 	jr $ra				
-							
-# End of program
