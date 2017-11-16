@@ -49,10 +49,6 @@ main:     				# indicates start of code to test lcm the procedure
 	la $a0, is	
 	syscall
 	
-	li $v0, 1			# printing the result value
-	addi $a0, $s1, 0	
-	syscall
-	
 	li $v0, 10			# Tells the system that the procedure is done
 	syscall		
 														                    
