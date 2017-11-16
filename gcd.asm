@@ -71,7 +71,7 @@ gcd:	     				# the “gcd” procedure
 	blt $a1, $a2, ifLess		# else if 1st > 2nd number return gcd(m-n, n)
 
 ifGreater:
-	subu $a1, $a1, $a2		# m - n
+	sub $a1, $a1, $a2		# m - n
 	jal gcd				# recursive call to gcd
 	j exit
 	
